@@ -1,4 +1,8 @@
 @use "../../abstracts/" as *;
+
+$-motivation__image-hover-padding:0.33rem;
+$-motivation__image-hover-border:0.33rem;
+
 .motivation{
     margin-top: 2rem;
 }
@@ -36,9 +40,12 @@
 .motivation__column-images{
     float: left;
     width: 66.66%;
+     /*height:36rem;*/
+     height:clamp(10rem, calc(35vw + 10rem), 36rem); 
     position: relative;
    
 }
+
 /**
 * Param $top: Postion from top (in rem)
 * Param $left: Postion from left (in %)
@@ -46,9 +53,11 @@
 @mixin motivation__image-postion($top, $left){
     top: $top;
     left:$left;
+
+    $border-offset: $-motivation__image-hover-border +$-motivation__image-hover-padding;
     &:hover{
-        top: $top - 0.66rem;
-        left: calc(#{$left} - 0.66rem);
+        top: $top - $border-offset;
+        left: calc(#{$left} - #{$border-offset});
         
         
     }
@@ -58,6 +67,9 @@
     position: absolute;
     box-shadow:0 0 1rem rgba(0, 0, 0, 0.5);
     box-sizing: content-box;
+    filter:grayscale(50%);
+    transform: scale(1);    
+    transition: filter ease-in-out 0.2s, transform ease-in-out 0.2s;
 
     &--first{
         width: 75%;
@@ -85,9 +97,12 @@
         
     }
     &:hover{
-        border: 0.33rem solid $color-primary;
-        padding: 0.33rem;
+        filter:grayscale(0%);
+        transform: scale(1.05);
+        border: $-motivation__image-hover-border solid $color-primary;
+        padding: $-motivation__image-hover-padding;
         z-index: 10;
+        
     }
  
 
