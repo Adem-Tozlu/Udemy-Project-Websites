@@ -10,21 +10,40 @@ $-motivation__image-hover-border:0.33rem;
 .motivation__column-text {
     float: left;
     width: 33.33%;
-   
+   padding-right: 4.5rem;
+   padding-top: 4rem;
 
+   @media  (max-width: $breakpoint-lg) {
+    
+    padding-right: 3rem;
+    
+   }
+    @media  (max-width: $breakpoint-md) {
+     padding-top: 0;
+     padding-right: 0;
+     width: 50%;
+     
+    }
+    @media (max-width: $breakpoint-sm) {
+        float: none;
+       width: 100%;
+       padding-bottom: 3rem;
+
+        
+    }
 
 }
 .motivation__text-heading{
 
-    margin-top: 4rem;
+    
     color: $color-secondary;
     font-weight: 500;
+    font-size: 2rem;
    
 
     &::before{
         content: "";
         display: block;
-        
         width: 3rem;
         height: 0.25rem;
         margin-bottom: 0.5rem;
@@ -35,6 +54,7 @@ $-motivation__image-hover-border:0.33rem;
 .motivation__text{
     color: $color-secondary-light;
     margin-top: 0.2rem;
+    font-size:1.1rem;
 }
 
 .motivation__column-images{
@@ -43,6 +63,25 @@ $-motivation__image-hover-border:0.33rem;
      /*height:36rem;*/
      height:clamp(10rem, calc(35vw + 10rem), 36rem); 
     position: relative;
+
+    @media (max-width: $breakpoint-md) {
+        width: 50%;
+        height:clamp(10rem, calc(25vw + 10rem), 36rem); 
+       
+        
+    }
+    @media (max-width: $breakpoint-sm) {
+        position: relative;
+        float: none;
+        width: 80%;
+        margin: 0 auto;
+        height:clamp(10rem, calc(40vw + 10rem), 36rem); 
+        
+    }
+    @media (max-width: $breakpoint-xs){
+        width: 90%;
+        height:clamp(10rem, calc(45vw + 10rem), 36rem); 
+    }
    
 }
 
@@ -54,7 +93,7 @@ $-motivation__image-hover-border:0.33rem;
     top: $top;
     left:$left;
 
-    $border-offset: $-motivation__image-hover-border +$-motivation__image-hover-padding;
+    $border-offset: $-motivation__image-hover-border + $-motivation__image-hover-padding;
     &:hover{
         top: $top - $border-offset;
         left: calc(#{$left} - #{$border-offset});
