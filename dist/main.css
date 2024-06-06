@@ -240,6 +240,7 @@ html {
 
 .motivation {
   margin-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 .motivation__column-text {
@@ -372,6 +373,30 @@ html {
   border: 0.33rem solid rgb(0, 226, 156);
   padding: 0.33rem;
   z-index: 10;
+}
+
+.tours {
+  background-color: #011820;
+  height: 30rem;
+  position: relative;
+}
+.tours::before {
+  content: "Tame the Wild";
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 10rem;
+  color: #011820;
+  -webkit-text-stroke: 1px white;
+}
+.tours__heading {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: #eaf3f6;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
