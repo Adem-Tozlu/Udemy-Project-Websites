@@ -382,29 +382,39 @@ html {
 }
 
 .tours::after, .tours::before {
-  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   position: absolute;
   content: "Tame the Wild";
   text-transform: uppercase;
   font-size: 10rem;
+  font-weight: bold;
   color: #011820;
   text-shadow: 0 0 1px white;
+  text-align: center;
+  z-index: 0;
 }
 
-@supports (-webkit-text-stroke: 1px rgba(255, 255, 255, 0.5)) or (text-stroke: 1px rgba(255, 255, 255, 0.5)) {
+@supports (-webkit-text-stroke: 2px rgba(255, 255, 255, 0.2)) or (text-stroke: 2px rgba(255, 255, 255, 0.2)) {
   .tours::before {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
-    text-stroke: 1px rgba(255, 255, 255, 0.5);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+    text-stroke: 1px rgba(255, 255, 255, 0.2);
     text-shadow: none;
   }
 }
 
-@supports (-webkit-text-stroke: 1px transparent) or (text-stroke: 1px transparent) {
+@supports (-webkit-text-stroke: 2px transparent) or (text-stroke: 2px transparent) {
   .tours::after {
-    -webkit-text-stroke: 1px transparent;
+    -webkit-text-stroke: 2px transparent;
     text-stroke: 1px transparent;
     text-shadow: none;
   }
+}
+
+.tours__container {
+  position: relative;
+  z-index: 1;
 }
 
 .tours__heading {
@@ -416,6 +426,25 @@ html {
   padding-top: 4rem;
   padding-bottom: 4rem;
   font-size: 2rem;
+}
+
+.tours__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tours__card {
+  width: 20%;
+}
+
+.tours__card-img {
+  width: 100%;
+}
+
+.tours__card-icon {
+  width: 4rem;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */
