@@ -380,14 +380,33 @@ html {
   height: 30rem;
   position: relative;
 }
-.tours::before {
-  content: "Tame the Wild";
+
+.tours::after, .tours::before {
+  top: 0;
   position: absolute;
+  content: "Tame the Wild";
   text-transform: uppercase;
   font-size: 10rem;
   color: #011820;
-  -webkit-text-stroke: 1px white;
+  text-shadow: 0 0 1px white;
 }
+
+@supports (-webkit-text-stroke: 1px rgba(255, 255, 255, 0.5)) or (text-stroke: 1px rgba(255, 255, 255, 0.5)) {
+  .tours::before {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    text-stroke: 1px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+  }
+}
+
+@supports (-webkit-text-stroke: 1px transparent) or (text-stroke: 1px transparent) {
+  .tours::after {
+    -webkit-text-stroke: 1px transparent;
+    text-stroke: 1px transparent;
+    text-shadow: none;
+  }
+}
+
 .tours__heading {
   text-transform: uppercase;
   letter-spacing: 0.1em;

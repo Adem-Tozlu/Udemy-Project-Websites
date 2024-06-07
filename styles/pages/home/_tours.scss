@@ -2,39 +2,57 @@
 
 $-tours-background-color: $color-secondary-dark;
 
-.tours{
-background-color: $-tours-background-color;
-height: 30rem;
-position: relative;
-&::before{
-    content: "Tame the Wild";
-    position: absolute;
-    text-transform: uppercase;
-    font-size: 10rem;
-    color: $-tours-background-color;
-    -webkit-text-stroke: 1px white;
-    
-   
+.tours {
+    background-color: $-tours-background-color;
+    height: 30rem;
+    position: relative;}
+
+    //erstelle einen Block vor und nach dem Element
+    %tours__before-and-after{
+        top:0;
+        position: absolute;
+        content: "Tame the Wild";
+        text-transform: uppercase;
+        font-size: 10rem;
+        color: $-tours-background-color;
+        text-shadow: 0 0 1px white;
+    }
+
+    @mixin -tours__before-and-after-stroke($color){
+       @supports (-webkit-text-stroke: 1px #{$color}) or (text-stroke: 1px #{$color}) {
+            -webkit-text-stroke: 1px #{$color};
+            text-stroke: 1px #{$color};
+            text-shadow: none;}
+    }
+
+    .tours::before{
+        @extend %tours__before-and-after;
+
+       @include -tours__before-and-after-stroke(rgba(255,255,255,0.5));
+            
+       
+    }
+
+    .tours::after{
+        @extend %tours__before-and-after;
+
+        @include -tours__before-and-after-stroke(transparent);
+       
+    }
 
 
-    
-
- 
-}
 
 
+    .tours__heading {
 
-&__heading{
-  
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    color: #eaf3f6;
-    text-align: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    font-size: 2rem;
-    
-}
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        color: #eaf3f6;
+        text-align: center;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        font-size: 2rem;
 
-}
+    }
+
