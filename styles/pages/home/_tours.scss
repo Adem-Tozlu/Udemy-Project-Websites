@@ -5,8 +5,10 @@ $-tours-background-color: $color-secondary-dark;
 .tours {
    
     background-color: $-tours-background-color;
-    height: 30rem;
-    position: relative;}
+    position: relative;
+    padding-bottom: 5rem;
+
+}
 
 
     //erstelle einen Block vor und nach dem Element
@@ -53,6 +55,8 @@ $-tours-background-color: $color-secondary-dark;
 
     position: relative;
     z-index: 1;
+
+    @include make-container();
 }
 
     .tours__heading {
@@ -73,21 +77,70 @@ $-tours-background-color: $color-secondary-dark;
 
     .tours__cards {
         display: flex;
-        justify-content: center;
-        align-items: center;
+   
     
     }
 .tours__card {
     width: 20%;
+    position: relative;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.tours__card-icon-container{
+    background-color: $color-primary;
+    position:absolute ;
+    top: 0;
+    left: 0;
+   
+
 }
 
 .tours__card-img{
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
     .tours__card-icon{
         width: 4rem;
         color: white;
+        display: block;
                 }
-    
+.tours__card-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
+    color: white;
+    padding: 0 1rem;
+}
+    
+.tours__card-heading{
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    
+  
+}
+.tours__card-location{
+    font-size: 0.9rem;
+    margin-bottom: 0.33rem;
+    display: flex;
+   
+   
+ 
+}
+
+.tours__card-location-icon{
+    font-size:1.25rem ;
+    
+}
+.tours__card-location-text{
+    line-height: 1.9rem;
+}
+.tours__card-desc{
+    font-size: 0.9rem;
+    
+}
