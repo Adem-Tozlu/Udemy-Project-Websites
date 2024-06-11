@@ -451,7 +451,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 500;
-  color: #eaf3f6;
+  color: white;
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 1rem;
@@ -574,6 +574,68 @@ html {
   background-size: 100% 0.125rem;
   background-repeat: no-repeat;
   padding: 0.9rem 0;
+}
+
+.story {
+  position: relative;
+  overflow: hidden;
+}
+
+.story__video {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.story__video-colorize {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(38, 70, 77, 0.5);
+}
+
+.story__container {
+  position: relative;
+  z-index: 2;
+  max-width: 75rem;
+  margin: 0px auto;
+  padding: 0 2rem;
+}
+.story__container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media (max-width: 36em) {
+  .story__container {
+    padding: 0 1rem;
+  }
+}
+
+.story__heading {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  font-size: 2rem;
+}
+
+.story__desc {
+  max-width: 40rem;
+  margin: 0 auto;
+  color: white;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 0.125rem solid rgba(255, 255, 255, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */
