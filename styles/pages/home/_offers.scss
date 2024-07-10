@@ -2,6 +2,7 @@
 @use "../../abstracts/" as *;
 
 $-offers-card-border-width: (1rem/16);
+$-offers-card-margin: 0.66rem;
 
 .offers{
     background-color: rgba(240,240,240);
@@ -9,14 +10,21 @@ $-offers-card-border-width: (1rem/16);
 
     &__card{
         flex:1 0 0;
-        margin: 0 0.66rem;
-        padding: 2rem 1rem;
+        margin: 0 $-offers-card-margin;
+        padding: 0;
         background-color: white ;
         box-shadow: 0.5rem 0.5rem 2rem black;
         border-left: $-offers-card-border-width solid #e2e2e2;
         border-right: $-offers-card-border-width solid #e2e2e2;
         border-top:  $-offers-card-border-width solid #e2e2e2;
         position: relative;
+
+        &:first-child{
+            margin-left: 0;
+        }
+        &:last-child{
+            margin-right: 0;
+        }	
 
         &:after{
             position: absolute;
@@ -35,9 +43,21 @@ $-offers-card-border-width: (1rem/16);
     }
 }
 .offers__container{
-    @include make-container();
     display: flex;
+    flex-wrap: wrap;
    padding-bottom: 4rem;
    padding-top:4rem;
+   margin-left: -$-offers-card-margin;
+    margin-right: -$-offers-card-margin;
 
+}
+
+.offers__image{
+    width: 100%;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+    &-container{
+        background-color: $color-primary;
+        margin: -$-offers-card-border-width -$-offers-card-border-width 0 -$-offers-card-border-width;
+    }
 }

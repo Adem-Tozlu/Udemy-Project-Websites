@@ -696,13 +696,19 @@ html {
 .offers__card {
   flex: 1 0 0;
   margin: 0 0.66rem;
-  padding: 2rem 1rem;
+  padding: 0;
   background-color: white;
   box-shadow: 0.5rem 0.5rem 2rem black;
   border-left: 0.0625rem solid #e2e2e2;
   border-right: 0.0625rem solid #e2e2e2;
   border-top: 0.0625rem solid #e2e2e2;
   position: relative;
+}
+.offers__card:first-child {
+  margin-left: 0;
+}
+.offers__card:last-child {
+  margin-right: 0;
 }
 .offers__card:after {
   position: absolute;
@@ -718,22 +724,22 @@ html {
 }
 
 .offers__container {
-  max-width: 75rem;
-  margin: 0px auto;
-  padding: 0 2rem;
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 4rem;
   padding-top: 4rem;
+  margin-left: -0.66rem;
+  margin-right: -0.66rem;
 }
-.offers__container::after {
-  content: "";
-  display: block;
-  clear: both;
+
+.offers__image {
+  width: 100%;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
 }
-@media (max-width: 36em) {
-  .offers__container {
-    padding: 0 1rem;
-  }
+.offers__image-container {
+  background-color: rgb(0, 226, 156);
+  margin: -0.125rem -0.0625rem;
 }
 
 /*# sourceMappingURL=main.css.map */
